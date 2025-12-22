@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Prueba portada responsive</title>
 
 <link rel="stylesheet" href="https://unpkg.com/fullpage.js/dist/fullpage.min.css">
@@ -21,11 +21,13 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    height: 100vh;
   }
 
   @media (max-width: 1100px) {
     .cover {
       background-image: url("portada-movil.png");
+      background-position: center center;
     }
   }
 </style>
