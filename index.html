@@ -2,27 +2,31 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Presentación</title>
+<title>Prueba portada responsive</title>
 
-<!-- fullPage.js CSS -->
 <link rel="stylesheet" href="https://unpkg.com/fullpage.js/dist/fullpage.min.css">
 
 <style>
-  body {
-    font-family: Arial, sans-serif;
+  html, body {
+    margin: 0;
+    padding: 0;
   }
+
   .section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 48px;
+    height: 100vh;
   }
+
   .cover {
-    background: #000;
-    color: white;
+    background-image: url("portada.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
-  .product {
-    background: #f2f2f2;
+
+  @media (max-width: 1100px) {
+    .cover {
+      background-image: url("portada-movil.png");
+    }
   }
 </style>
 </head>
@@ -30,37 +34,18 @@
 <body>
 
 <div id="fullpage">
-
-  <div class="section cover" style="background:url('portada.png') center/cover no-repeat;">
-</div>
-
-  <div class="section product">
-    <h2>Producto 1</h2>
-  </div>
-
-  <div class="section product">
-    <h2>Producto 2</h2>
-  </div>
-
-  <div class="section product">
-    <h2>Producto 3</h2>
-  </div>
+  <div class="section cover"></div>
 
   <div class="section">
-    <h2>Descubre tu sorpresa</h2>
-    <!-- aquí irá la cuadrícula -->
+    <h1>Otra sección</h1>
   </div>
-
 </div>
 
-<!-- fullPage.js JS -->
 <script src="https://unpkg.com/fullpage.js/dist/fullpage.min.js"></script>
-
 <script>
 new fullpage('#fullpage', {
   autoScrolling: true,
-  navigation: true,
-  scrollingSpeed: 600
+  responsiveWidth: 768
 });
 </script>
 
