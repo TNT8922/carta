@@ -25,7 +25,7 @@
     background-repeat: no-repeat;
   }
 
-  @media (max-width: 1100px) {
+  @media (max-width: 768px) {
     .cover {
       background-image: url("portada-movil.png");
     }
@@ -66,22 +66,8 @@
     transform: scale(1.05);
   }
 
-  @media (max-width: 1100px) {
-  .imagen-con-boton {
-    background-image: url("producto1-movil.png");
-    background-position: center;
-  }
-  .boton {
-    top: 82%;
-    left: 35%;
-    padding: 8px 26px;
-    font-size: 14px;
-    border-radius: 5px;
-  }
-}
-
   /* ===== SCROLL SNAP SOLO EN MÓVIL ===== */
-  @media (max-width: 1100px) {
+  @media (max-width: 768px) {
     html, body {
       scroll-snap-type: y mandatory;
     }
