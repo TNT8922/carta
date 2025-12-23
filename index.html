@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prueba portada responsive</title>
+<title>Presentación</title>
 
 <link rel="stylesheet" href="https://unpkg.com/fullpage.js/dist/fullpage.min.css">
 
@@ -16,28 +17,78 @@
     height: 100vh;
   }
 
+  /* ===== PORTADA ===== */
   .cover {
     background-image: url("portada.png");
-    background-position: center;
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
-    height: 100vh;
   }
 
   @media (max-width: 1100px) {
     .cover {
       background-image: url("portada-movil.png");
-      background-position: center center;
     }
-    html, body {
-    scroll-snap-type: y mandatory;
   }
 
-  .section {
-    scroll-snap-align: start;
-    height: 100vh;
+  /* ===== SECCIÓN CON BOTÓN ===== */
+  .imagen-con-boton {
+    background-image: url("producto1.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Botón */
+  .boton {
+    padding: 20px 36px;
+    background: rgba(0, 0, 0, 0.65);
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    border-radius: 8px;
+    transition: transform 0.2s ease, background 0.2s ease;
+  }
+  .boton {
+  position: absolute;
+  top: 66%;
+  left: 15%;
+  
+}
+
+  .boton:hover {
+    background: rgba(0, 0, 0, 0.85);
+    transform: scale(1.05);
+  }
+
+  @media (max-width: 1100px) {
+  .imagen-con-boton {
+    background-image: url("producto1-movil.png");
+    background-position: center;
+  }
+  .boton {
+    top: 83%;
+    left: 38%;
+    padding: 10px 26px;
+    font-size: 14px;
+    border-radius: 5px;
   }
 }
+
+  /* ===== SCROLL SNAP SOLO EN MÓVIL ===== */
+  @media (max-width: 1100px) {
+    html, body {
+      scroll-snap-type: y mandatory;
+    }
+
+    .section {
+      scroll-snap-align: start;
+    }
   }
 </style>
 </head>
@@ -45,19 +96,25 @@
 <body>
 
 <div id="fullpage">
+
+  <!-- SECCIÓN 1: PORTADA -->
   <div class="section cover"></div>
 
-  <div class="section">
-    <h1>Otra sección</h1>
+  <!-- SECCIÓN 2: IMAGEN + BOTÓN -->
+  <div class="section imagen-con-boton">
+    <a href="https://www.pccomponentes.com/disco-duro-samsung-990-pro-2tb-disco-ssd-7450mb-s-nvme-pcie-40-m2-gen4" class="boton" target="_blank">
+      https://acortar.link/e2OI9N
+    </a>
   </div>
+
 </div>
 
 <script src="https://unpkg.com/fullpage.js/dist/fullpage.min.js"></script>
 <script>
-new fullpage('#fullpage', {
-  autoScrolling: true,
-  responsiveWidth: 768
-});
+  new fullpage('#fullpage', {
+    autoScrolling: true,
+    scrollingSpeed: 600
+  });
 </script>
 
 </body>
